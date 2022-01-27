@@ -46,11 +46,11 @@
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	border-radius: 5%;
 }
-.score {
+.score{
 	position: fixed;
 	z-index: 10;
 	height: 10vh;
-	font-size: 10vh;
+	font-size: 7vh;
 	font-weight: 100;
 	color: white;
 	-webkit-text-stroke-width: 2px;
@@ -64,6 +64,29 @@
 	color: gold;
 	font-weight: bold;
 }
+.best_score_title{
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 7vh;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	top: 70px;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.best_score_val{
+	color: gold;
+	font-weight: bold;
+	position: fixed;
+	top: 80px;
+	left: 280px;
+}
+
 @media only screen and (max-width: 1080px) {
     .message{
 		font-size: 50px;

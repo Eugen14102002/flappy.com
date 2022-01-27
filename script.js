@@ -13,6 +13,8 @@ let background = document.querySelector('.background').getBoundingClientRect();
 let score_val = document.querySelector('.score_val');
 let message = document.querySelector('.message');
 let score_title = document.querySelector('.score_title');
+let best_score_title = document.querySelector('.best_score_title')
+let best_score_val = document.querySelector('.best_score_val')
 
 let game_state = 'Start';
 img.style.display = 'none';
@@ -30,10 +32,15 @@ document.addEventListener('keydown', (e) => {
         message.innerHTML = '';
         score_title.innerHTML = 'Score : ';
         score_val.innerHTML = '0';
+        best_score_title.innerHTML = 'Best Score: ';
+        best_score_val.innerHTML = '31';
         message.classList.remove('messageStyle');
         play();
     }
 });
+
+
+
 
 function play(){
     function move(){
@@ -57,6 +64,8 @@ function play(){
                 }else{
                     if(pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left && element.increase_score == '1'){
                         score_val.innerHTML =+ score_val.innerHTML + 1;
+                        
+                       
                         sound_point.play();
                     }
                     element.style.left = pipe_sprite_props.left - move_speed + 'px';
@@ -119,7 +128,6 @@ function play(){
             pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
             pipe_sprite.style.left = '100vw';
             pipe_sprite.increase_score = '1';
-
             document.body.appendChild(pipe_sprite);
         }
         pipe_seperation++;
